@@ -1,0 +1,30 @@
+<!DOCTYPE html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery弹出层</title>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	  $(".but").click(function(){
+      var length=document.documentElement.scrollTop;
+      $(".dialog").show();
+	  $(".half").show().css("height",$(document).height());	 
+      })   
+      $(".close").click(function(){$(".dialog").hide();$(".half").hide();});   
+})
+</script>
+<style type="text/css">
+.dialog{ width:200px; height: 200px; border:#f00 3px solid; position: fixed;left: 0; right: 0; bottom: 0; top: 0; margin: auto; display:none; z-index:100}
+.half{ width:100%; height:100%; background-color:rgba(0,0,0,0.5); position:fixed; top:0; left:0; display:none; z-index:99}
+.but{ margin:230px auto; background-color:#06F; width:121px; height:31px; color:#fff; font-weight:bold; line-height:31px; cursor:pointer}
+</style>
+</head>
+<body >
+<div class="half"></div>
+<div class="dialog">
+	<h2><a href="#" class="close">关闭</a></h2>
+</div>
+<div style="text-align:center" class="but">点击弹出浮层</div>
+</body>
+</html>
+

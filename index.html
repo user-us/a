@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>选项卡切换</title>
+<style type="text/css">
+body,ul,p{margin:0;padding:0}
+.about_left{font-size:12px; line-height:25px}
+.about_left ul{list-style:none; }
+.about_left ul li{float:left;padding:15px 20px;border:1px solid #000;border-bottom:0;margin-right:8px}
+.about_left{width:350px;cursor:pointer; margin:50px}
+.about_right{clear:both;border:1px solid #000; padding:10px}
+.checked{background-color:#669900;}
+.hide{display:none}
+</style>
+<script type="text/javascript" src="script/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".about_right .qie:gt(0)").hide();
+	$(".thing li").click(function(){
+		$(this).addClass("checked").siblings().removeClass("checked");
+		//获取序列号
+		index=$(this).index();
+		$(".about_right .qie").eq(index).show().siblings().hide();
+	})
+})
+</script>
+</head>
+<body>
+<div class="about_left">
+  <ul class="thing">
+    <li class="checked">时尚</li>
+    <li>体育</li>
+    <li>新闻</li>
+    <li>时尚</li>
+    <li>体育</li>
+  </ul>
+  <div class="about_right">
+    <div class="qie">
+    	体育体育体育体育体育体育体育体育体育体育体育
+    </div>
+    <div class="qie">体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育</div>
+    <div class="qie">新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻</div>
+    <div class="qie">时尚时尚时尚时尚时尚时尚时尚时尚时尚时尚时尚时尚时尚时尚时尚时尚时尚时尚时尚</div>
+    <div class="qie">体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育</div>
+  </div>
+</div>
+</body>
+</html>
